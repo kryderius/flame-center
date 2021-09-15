@@ -113,7 +113,7 @@ const PageImage = styled(GatsbyImage)`
 const Service = ({ data }) => {
   const service = data.datoCmsService
   return (
-    <Layout title={service.pageTitle}>
+    <Layout title={service.pageTitle} description={service.metaDescription}>
       <PageHeader>
         <HeaderImg
           image={data.heroImg.childImageSharp.gatsbyImageData}
@@ -137,6 +137,7 @@ export const query = graphql`
       slug
       pageTitle
       pageContent
+      metaDescription
       image {
         gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
       }
