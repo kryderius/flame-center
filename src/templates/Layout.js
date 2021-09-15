@@ -6,8 +6,9 @@ import Navigation from "../components/organisms/Navigation"
 import AOS from "aos"
 import "aos/dist/aos.css"
 import Footer from "../components/organisms/Footer"
+import { Helmet } from "react-helmet"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title, description }) => {
   useLayoutEffect(() => {
     setTimeout(() => {
       AOS.init({
@@ -18,12 +19,23 @@ const Layout = ({ children }) => {
     }, 100)
   }, [])
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Navigation />
-      <main>{children}</main>
-      <Footer />
-    </ThemeProvider>
+    <>
+      <Helmet>
+        <title>{title ? `${title} | Flame Center` : `Flame Center`}</title>
+        <meta
+          name="description"
+          content={description ? description : undefined}
+        />
+        <meta property="og:image" content="" />
+        <html lang="pl" />
+      </Helmet>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles />
+        <Navigation />
+        <main>{children}</main>
+        <Footer />
+      </ThemeProvider>
+    </>
   )
 }
 
