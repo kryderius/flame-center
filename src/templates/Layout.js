@@ -24,7 +24,11 @@ const Layout = ({ children, title, description }) => {
         <title>{title ? `${title} | Flame Center` : `Flame Center`}</title>
         <meta
           name="description"
-          content={description ? description : undefined}
+          content={
+            description
+              ? description
+              : "Profesjonalne usługi ppoż. Usługi przeciwpożarowe dla Twojej firmy. Piotrków Trybunalski"
+          }
         />
         <meta property="og:image" content="" />
         <html lang="pl" />
