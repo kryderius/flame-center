@@ -109,7 +109,7 @@ const IndexPage = () => {
     })
   }
   return (
-    <Layout>
+    <Layout title="Usługi PPOŻ">
       <Hero id="hero">
         <HeroImg image={data.heroImg.childImageSharp.gatsbyImageData} />
         <HeroContainer>

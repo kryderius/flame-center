@@ -44,6 +44,7 @@ const HeaderImg = styled(GatsbyImage)`
 
 const HeaderTitle = styled(Headline)`
   color: white;
+  text-align: center;
 `
 
 const ContentWrapper = styled.section`
@@ -112,7 +113,7 @@ const PageImage = styled(GatsbyImage)`
 const Service = ({ data }) => {
   const service = data.datoCmsService
   return (
-    <Layout>
+    <Layout title={service.pageTitle}>
       <PageHeader>
         <HeaderImg
           image={data.heroImg.childImageSharp.gatsbyImageData}
