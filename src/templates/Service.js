@@ -119,11 +119,13 @@ const Service = ({ data }) => {
           image={data.heroImg.childImageSharp.gatsbyImageData}
           alt=""
         />
-        <HeaderTitle>{service.pageTitle}</HeaderTitle>
+        <HeaderTitle data-aos="fade-down" data-aos-delay="200">
+          {service.pageTitle}
+        </HeaderTitle>
       </PageHeader>
       <ContentWrapper>
         <ImageContainer>
-          <PageImage image={service.image.gatsbyImageData} />
+          <PageImage image={service.image.gatsbyImageData} alt="" />
         </ImageContainer>
         <Content dangerouslySetInnerHTML={{ __html: service.pageContent }} />
       </ContentWrapper>

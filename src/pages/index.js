@@ -111,14 +111,14 @@ const IndexPage = () => {
   return (
     <Layout title="Usługi PPOŻ">
       <Hero id="hero">
-        <HeroImg image={data.heroImg.childImageSharp.gatsbyImageData} />
+        <HeroImg image={data.heroImg.childImageSharp.gatsbyImageData} alt="" />
         <HeroContainer>
           <StyledHeadline $headlineS data-aos="fade-down">
             Zapewniamy wysoką <br /> jakość{" "}
             <span className="hero_headline--red">usług</span> <br />{" "}
             <span className="hero_headline--orange">przeciwpożarowych</span>
           </StyledHeadline>
-          <StyledText data-aos="fade-up">
+          <StyledText data-aos="fade-up" data-aos-delay="300">
             Posiadamy ogromne doświadczenie w zakresie ochrony PPOŻ.
           </StyledText>
           <Button onClick={() => scrollToSection("services")}>Sprawdź</Button>
@@ -136,7 +136,7 @@ const query = graphql`
     heroImg: file(name: { eq: "hero_image" }) {
       id
       childImageSharp {
-        gatsbyImageData(quality: 100, layout: FULL_WIDTH, formats: WEBP)
+        gatsbyImageData(quality: 80, layout: FULL_WIDTH, formats: WEBP)
       }
     }
   }

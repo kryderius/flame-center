@@ -14,9 +14,9 @@ const Layout = ({ children, title, description }) => {
       AOS.init({
         offset: 200,
         duration: 600,
-        easing: "ease-out-quad",
+        easing: "ease-in-out-quint",
       })
-    }, 100)
+    }, 500)
   }, [])
   return (
     <>

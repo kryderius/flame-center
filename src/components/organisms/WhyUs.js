@@ -63,14 +63,27 @@ const StyledText = styled(Text)`
 const WhyUs = () => {
   const data = useStaticQuery(WhyUsImages)
   return (
-    <Wrapper id="about-us">
+    <Wrapper>
       <Container>
         <Left>
-          <GatsbyImage image={data.whyUs.childImageSharp.gatsbyImageData} />
-          <Title as="h3" data-aos="fade-down">
+          <GatsbyImage
+            image={data.whyUs.childImageSharp.gatsbyImageData}
+            alt=""
+          />
+          <Title
+            as="h3"
+            data-aos="fade-down"
+            className="whyUs_animations--trigger"
+            data-aos-anchor=".whyUs_animations--trigger"
+            id="about-us"
+          >
             Dlaczego <span className="red-text">Flame Center?</span>
           </Title>
-          <StyledText data-aos="fade-up">
+          <StyledText
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-anchor=".whyUs_animations--trigger"
+          >
             Flame Center to zgrany zespół inżynierów pożarnictwa i ratowników
             medycznych, posiadający ogromne doświadczenie w zakresie usług ppoż.
             oraz szkoleń pierwszej pomocy.
@@ -85,11 +98,21 @@ const WhyUs = () => {
         <Right>
           <GatsbyImage
             image={data.wideServices.childImageSharp.gatsbyImageData}
+            alt=""
           />
-          <Title as="h3" data-aos="fade-down">
+          <Title
+            as="h3"
+            data-aos="fade-down"
+            className="whyUs_right_animations--trigger"
+            data-aos-anchor=".whyUs_right_animations--trigger"
+          >
             Szeroki zakres usług
           </Title>
-          <StyledText data-aos="fade-up">
+          <StyledText
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-anchor=".whyUs_right_animations--trigger"
+          >
             W naszej ofercie posiadamy szeroki zakres usług, m.in. przegląd,
             konserwacja i naprawa podręcznego sprzętu gaśniczego, doradztwo w
             zakresie bezpieczeństwa pożarowego, szkolenia ppoż. i pierwszej

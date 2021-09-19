@@ -73,10 +73,20 @@ const StyledText = styled(Text)`
 const CallToAction = () => {
   return (
     <Wrapper>
-      <Container>
+      <Container className="cta_animations--trigger">
         <img src={Triangles} alt="" className="calltoaction_triangles" />
-        <Title as="h5">Czekamy na Ciebie!</Title>
-        <StyledText>
+        <Title
+          as="h5"
+          data-aos="fade-down"
+          data-aos-anchor=".cta_animations--trigger"
+        >
+          Czekamy na Ciebie!
+        </Title>
+        <StyledText
+          data-aos="fade-up"
+          data-aos-delay="200"
+          data-aos-anchor=".cta_animations--trigger"
+        >
           Skontaktuj się z nami - chętnie odpowiemy na Twoje pytania!
         </StyledText>
         <ButtonLink link="/kontakt">Kontakt</ButtonLink>

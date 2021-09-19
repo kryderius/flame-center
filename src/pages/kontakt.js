@@ -216,23 +216,39 @@ const ContactPage = () => {
           image={data.heroImg.childImageSharp.gatsbyImageData}
           alt=""
         />
-        <HeaderTitle>Kontakt</HeaderTitle>
+        <HeaderTitle data-aos="fade-down" data-aos-delay="200">
+          Kontakt
+        </HeaderTitle>
       </PageHeader>
       <SectionWrapper>
         <SectionContainer>
-          <FormWrapper>
-            <Subheading>
+          <FormWrapper className="contactpage_heading_animations--trigger">
+            <Subheading
+              data-aos="fade-down"
+              data-aos-anchor=".contactpage_heading_animations--trigger"
+            >
               Masz pytania? Chciałbyś dowiedzieć się więcej?
             </Subheading>
-            <FormHeadline as="h2">Napisz do nas!</FormHeadline>
+            <FormHeadline
+              as="h2"
+              data-aos="fade-up"
+              data-aos-delay="200"
+              data-aos-anchor=".contactpage_heading_animations--trigger"
+            >
+              Napisz do nas!
+            </FormHeadline>
 
             <ContactForm />
           </FormWrapper>
           <ContactBlocks>
-            <ContactBlocksContainer>
+            <ContactBlocksContainer className="contactpage_blocks_animation--trigger">
               <img className="right_waves" src={Waves} alt="" />
 
-              <ContactBlock>
+              <ContactBlock
+                data-aos="zoom-in-up"
+                data-aos-anchor=".contactpage_blocks_animation--trigger"
+                data-aos-offset="500"
+              >
                 <a
                   href="https://www.google.com/maps/dir//Warszawa/@52.2330653,20.9211124,11z/data=!4m9!4m8!1m0!1m5!1m1!1s0x471ecc669a869f01:0x72f0be2a88ead3fc!2m2!1d21.0122287!2d52.2296756!3e0?hl=pl-PL"
                   className="contactpage_link"
@@ -246,7 +262,12 @@ const ContactPage = () => {
                   Adres
                 </a>
               </ContactBlock>
-              <ContactBlock>
+              <ContactBlock
+                data-aos="zoom-in-up"
+                data-aos-delay="200"
+                data-aos-anchor=".contactpage_blocks_animation--trigger"
+                data-aos-offset="500"
+              >
                 <a href="tel:600502072" className="contactpage_link">
                   <Icon
                     icon="ic:outline-phone"
@@ -257,7 +278,12 @@ const ContactPage = () => {
                   600 502 072
                 </a>
               </ContactBlock>
-              <ContactBlock>
+              <ContactBlock
+                data-aos="zoom-in-up"
+                data-aos-delay="400"
+                data-aos-anchor=".contactpage_blocks_animation--trigger"
+                data-aos-offset="500"
+              >
                 <a
                   href="mailto:kontakt@flamecenter.pl"
                   className="contactpage_link"
@@ -275,7 +301,7 @@ const ContactPage = () => {
           </ContactBlocks>
         </SectionContainer>
         <ThankYouContainer>
-          <ThankYouText as="h5">
+          <ThankYouText as="h5" data-aos="zoom-out-down">
             Dziękujemy <span className="thankyou--red">Ci</span>, że jesteś{" "}
             <span className="thankyou--orange">z nami!</span>
             <img src={Dots} alt="" className="left_dots" />

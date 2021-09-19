@@ -153,8 +153,8 @@ const FooterMenuItems = [
   },
   {
     id: 5,
-    name: "Hydranty",
-    link: "hydranty",
+    name: "Hydranty wewnętrzne i zewnętrzne",
+    link: "hydranty-wewnetrzne-i-zewnetrzne",
   },
   {
     id: 6,
@@ -257,8 +257,8 @@ const Footer = () => {
           </StyledText>
           <MenuList>
             {FooterMenuItems.map(item => (
-              <MenuListItem>
-                <Link to={item.link}>{item.name}</Link>
+              <MenuListItem key={item.id}>
+                <Link to={`/${item.link}`}>{item.name}</Link>
               </MenuListItem>
             ))}
           </MenuList>

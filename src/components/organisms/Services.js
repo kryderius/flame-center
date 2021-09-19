@@ -124,63 +124,87 @@ const Services = () => {
     <ServicesSection id="services">
       <ServicesContainer>
         <img src={CirclesSVG} alt="" className="circles_top_left" />
-        <HeadlineWrapper>
-          <StyledHeadline as="h2" data-aos="fade-down">
+        <HeadlineWrapper className="services_animations--trigger">
+          <StyledHeadline
+            as="h2"
+            data-aos="fade-down"
+            data-aos-anchor=".services_animations--trigger"
+          >
             Ochrona{" "}
             <span className="services_headline--red">przeciwpożarowa</span>
           </StyledHeadline>
-          <Text $isDark>
-            Sprawdź co możemy dla Ciebie zrobić z zakresu usług BHP i ochrony
+          <Text
+            $isDark
+            data-aos="fade-up"
+            data-aos-delay="200"
+            data-aos-anchor=".services_animations--trigger"
+          >
+            Sprawdź co możemy dla Ciebie zrobić z zakresu ochrony
             przeciwpożarowej.
           </Text>
         </HeadlineWrapper>
         <BlocksWrapper>
-          <Block to="/">
+          <Block to="/instrukcja-ppoz">
             <BlockImage
               image={data.instrukcjaPpoz.childImageSharp.gatsbyImageData}
+              alt=""
             />
             <Title>Instrukcja bezpieczeństwa pożarowego</Title>
           </Block>
-          <Block>
+          <Block to="/audyt-ppoz">
             <BlockImage
               image={data.audytPpoz.childImageSharp.gatsbyImageData}
+              alt=""
             />
             <Title>Audyt przeciwpożarowy</Title>
           </Block>
-          <Block>
+          <Block to="/operat-ppoz">
             <BlockImage
               image={data.operatPpoz.childImageSharp.gatsbyImageData}
+              alt=""
             />
             <Title>Operat przeciwpożarowy</Title>
           </Block>
-          <Block>
-            <BlockImage image={data.gasnice.childImageSharp.gatsbyImageData} />
+          <Block to="/gasnice">
+            <BlockImage
+              image={data.gasnice.childImageSharp.gatsbyImageData}
+              alt=""
+            />
             <Title>Gaśnice</Title>
           </Block>
-          <Block>
-            <BlockImage image={data.hydranty.childImageSharp.gatsbyImageData} />
-            <Title>Hydranty</Title>
+          <Block to="/hydranty-wewnetrzne-i-zewnetrzne">
+            <BlockImage
+              image={data.hydranty.childImageSharp.gatsbyImageData}
+              alt=""
+            />
+            <Title>Hydranty wewnętrzne i zewnętrzne</Title>
           </Block>
-          <Block>
+          <Block to="/szkolenia-ppoz">
             <BlockImage
               image={data.szkoleniaPpoz.childImageSharp.gatsbyImageData}
+              alt=""
             />
             <Title>Szkolenia przeciwpożarowe</Title>
           </Block>
-          <Block>
+          <Block to="/szkolenia-z-zakresu-pierwszej-pomocy">
             <BlockImage
               image={data.szkoleniaPomoc.childImageSharp.gatsbyImageData}
+              alt=""
             />
             <Title>Szkolenie z zakresu udzielania pierwszej pomocy </Title>
           </Block>
-          <Block>
+          <Block to="/plany-ewakuacyjne">
             <BlockImage
               image={data.planyEwakuacyjne.childImageSharp.gatsbyImageData}
+              alt=""
             />
             <Title>Plany ewakuacyjne</Title>
           </Block>
-          <Block>
-            <BlockImage image={data.nadzor.childImageSharp.gatsbyImageData} />
+          <Block to="/nazdor-ppoz-nad-obiektem">
+            <BlockImage
+              image={data.nadzor.childImageSharp.gatsbyImageData}
+              alt=""
+            />
             <Title>Nadzór przeciwpożarowy nad obiektem</Title>
           </Block>
         </BlocksWrapper>

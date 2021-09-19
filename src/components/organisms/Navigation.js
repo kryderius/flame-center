@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react"
 
 import styled from "styled-components"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import { navigate } from "gatsby"
 import { scroller } from "react-scroll"
 import FilledButton from "../atoms/FilledButton"
@@ -263,7 +263,7 @@ const DropdownMenu = styled.div`
   li {
     margin-bottom: 10px;
 
-    :hover {
+    &:hover {
       text-decoration: underline;
     }
   }
@@ -335,26 +335,26 @@ const DropdownMenuItems = [
   },
   {
     id: 5,
-    name: "Hydranty",
-    link: "hydranty",
+    name: "Hydranty wewnętrzne i zewnętrzne",
+    link: "hydranty-wewnetrzne-i-zewnetrzne",
   },
   {
-    id: 3,
+    id: 6,
     name: "Szkolenia przeciwpożarowe",
     link: "szkolenia-ppoz",
   },
   {
-    id: 3,
+    id: 7,
     name: "Szkolenie z zakresu udzielania pierwszej pomocy ",
     link: "szkolenia-z-zakresu-pierwszej-pomocy",
   },
   {
-    id: 3,
+    id: 8,
     name: "Plany ewakuacyjne",
     link: "plany-ewakuacyjne",
   },
   {
-    id: 3,
+    id: 9,
     name: "Nadzór przeciwpożarowy nad obiektem",
     link: "nazdor-ppoz-nad-obiektem",
   },
@@ -365,7 +365,6 @@ const Navigation = () => {
   const [isVisible, setVisible] = useState(true)
   const [openDropdown, setOpenDropdown] = useState(false)
   const posY = useRef(5)
-  const logoData = useStaticQuery(navLogo)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -523,7 +522,7 @@ const Navigation = () => {
             </a>
             <DropdownMenu className="dropdown_menu">
               {DropdownMenuItems.map(item => (
-                <NavDesktopItem>
+                <NavDesktopItem key={item.id}>
                   <Link to={`/${item.link}`}>{item.name}</Link>
                 </NavDesktopItem>
               ))}
@@ -557,7 +556,7 @@ const Navigation = () => {
             className={openDropdown ? "dropdown_mobile--open" : ""}
           >
             {DropdownMenuItems.map(item => (
-              <NavMobileListItem>
+              <NavMobileListItem key={item.id}>
                 <Link to={`/${item.link}`}>{item.name}</Link>
               </NavMobileListItem>
             ))}
@@ -577,16 +576,5 @@ const Navigation = () => {
     </Wrapper>
   )
 }
-
-const navLogo = graphql`
-  {
-    logo: file(name: { eq: "logo" }) {
-      id
-      childImageSharp {
-        gatsbyImageData(formats: PNG, layout: FULL_WIDTH, quality: 100)
-      }
-    }
-  }
-`
 
 export default Navigation
