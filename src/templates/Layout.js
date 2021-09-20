@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from "react"
+import React, { useLayoutEffect, useState } from "react"
 import { ThemeProvider } from "styled-components"
 import { theme } from "../theme/theme"
 import GlobalStyles from "../theme/GlobalStyles"
@@ -7,8 +7,10 @@ import AOS from "aos"
 import "aos/dist/aos.css"
 import Footer from "../components/organisms/Footer"
 import { Helmet } from "react-helmet"
+import Cookies from "../components/organisms/Cookies"
 
 const Layout = ({ children, title, description }) => {
+  const [canBeDisplayedCookie, setCanBeDisplayedCookie] = useState(false)
   useLayoutEffect(() => {
     setTimeout(() => {
       AOS.init({
@@ -37,6 +39,10 @@ const Layout = ({ children, title, description }) => {
         <GlobalStyles />
         <Navigation />
         <main>{children}</main>
+        <Cookies
+          canBeDisplayed={canBeDisplayedCookie}
+          setCanBeDisplayed={setCanBeDisplayedCookie}
+        />
         <Footer />
       </ThemeProvider>
     </>
